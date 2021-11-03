@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
-import { fetchAddContactToDb } from "../../redux/contacts/contacts-operations";
+import { fetchAddContactTo } from "../../redux/contacts/contacts-operations";
 import { useSelector } from "react-redux";
 import { getItems } from "../../redux/contacts/contacts-selectors";
 import React from "react";
@@ -34,7 +34,7 @@ function ContactForm() {
       alert(`${data.name} is already in contacts`);
       return;
     }
-    dispatch(fetchAddContactToDb(data));
+    dispatch(fetchAddContactTo(data));
     setName("");
     setNumber("");
   };

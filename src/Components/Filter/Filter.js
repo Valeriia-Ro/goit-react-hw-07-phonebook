@@ -23,7 +23,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onFilter: (e) => dispatch(changeFilter(e.target.value)),
+  onFilter: (e) => dispatch(changeFilter(e)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);
