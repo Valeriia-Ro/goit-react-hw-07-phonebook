@@ -13,13 +13,13 @@ function ContactForm() {
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    const { name, value } = e.currentTarget;
-    switch (name) {
+    const data = e.currentTarget.value;
+    switch (e.currentTarget.name) {
       case "name":
-        setName(value);
+        setName(data);
         break;
       case "number":
-        setNumber(value);
+        setNumber(data);
         break;
       default:
         return;
@@ -28,13 +28,13 @@ function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const value = { name, number };
-    const repeat = state.find((item) => item.number === value.number);
+    const data = { name, number };
+    const repeat = state.find((item) => item.number === data.number);
     if (repeat) {
-      alert(`${value.name} is already in contacts`);
+      alert(`${data.name} is already in contacts`);
       return;
     }
-    dispatch(fetchAddContactToDb(value));
+    dispatch(fetchAddContactToDb(data));
     setName("");
     setNumber("");
   };

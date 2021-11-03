@@ -9,8 +9,9 @@ const Filter = ({ value, onFilter }) => {
       Find contacts by name
       <input
         type="text"
+        name="filter"
         value={value}
-        onChange={(e) => onFilter(e.currentTarget.value)}
+        onChange={(e) => onFilter(e.target.value)}
         className={styles.filter_input}
       />
     </label>
